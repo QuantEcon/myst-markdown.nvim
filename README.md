@@ -49,7 +49,25 @@ Plug 'QuantEcon/myst-markdown.nvim'
 The plugin automatically activates for:
 
 - Files with `.myst` extension
-- Files with `.md` extension that contain MyST-specific syntax
+- Files where you manually run `:MystMarkdown` or `:SetMyst`
+
+### For .myst files
+
+Simply open any `.myst` file and the syntax highlighting will be activated automatically.
+
+### For .md files with MyST content
+
+When working with `.md` files that contain MyST syntax, you can manually activate MyST highlighting:
+
+```vim
+:MystMarkdown
+```
+
+or
+
+```vim
+:SetMyst
+```
 
 No configuration is required - the plugin works out of the box with sensible defaults.
 

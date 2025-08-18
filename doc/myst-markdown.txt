@@ -6,8 +6,9 @@ CONTENTS                                                     *myst-markdown*
   1. Introduction ........................... |myst-markdown-introduction|
   2. Installation ........................... |myst-markdown-installation|
   3. Features ............................... |myst-markdown-features|
-  4. Configuration .......................... |myst-markdown-configuration|
-  5. Filetype Detection ..................... |myst-markdown-filetype|
+  4. Usage .................................. |myst-markdown-usage|
+  5. Commands ............................... |myst-markdown-commands|
+  6. Filetype Detection ..................... |myst-markdown-filetype|
 
 ==============================================================================
 1. INTRODUCTION                                   *myst-markdown-introduction*
@@ -48,27 +49,29 @@ The plugin provides syntax highlighting for the following MyST features:
 All standard Markdown syntax is also supported, as MyST extends CommonMark.
 
 ==============================================================================
-4. CONFIGURATION                                 *myst-markdown-configuration*
+4. USAGE                                                 *myst-markdown-usage*
 
-No configuration is required. The plugin works out of the box with sensible
-defaults.
+The plugin automatically activates for files with the .myst extension.
 
-The plugin automatically detects MyST content in .md files by looking for
-MyST-specific syntax patterns in the first 20 lines.
+For .md files containing MyST syntax, you can manually activate MyST 
+highlighting using the provided commands.
 
 ==============================================================================
-5. FILETYPE DETECTION                               *myst-markdown-filetype*
+5. COMMANDS                                           *myst-markdown-commands*
 
-The plugin automatically sets the filetype to 'myst' for:
+:MystMarkdown                                                  *:MystMarkdown*
+:SetMyst                                                          *:SetMyst*
+    Set the current buffer's filetype to 'myst' to enable MyST syntax
+    highlighting. These commands are equivalent.
 
-• Files with .myst extension
-• Files with .md extension that contain MyST-specific syntax
+==============================================================================
+6. FILETYPE DETECTION                               *myst-markdown-filetype*
 
-MyST-specific patterns detected include:
-• Colon fences (:::)
-• Comments (%)  
-• Block breaks (+++)
-• Targets ((name)=)
+The plugin automatically sets the filetype to 'myst' for files with .myst
+extension.
+
+For .md files, use the :MystMarkdown or :SetMyst commands to manually enable
+MyST syntax highlighting when the file contains MyST-specific syntax.
 
 ==============================================================================
 vim:tw=78:sw=4:ts=8:ft=help:norl:
