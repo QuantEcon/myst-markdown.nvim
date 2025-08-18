@@ -14,6 +14,8 @@ Here's a block break:
 
 ## Directives Section
 
+### Colon Fence Directives
+
 :::note
 This is a note directive.
 :::
@@ -23,6 +25,33 @@ This is a warning directive.
 
 With multiple paragraphs.
 :::
+
+### Backtick Fence Directives
+
+```{note}
+This is a note directive using backticks.
+```
+
+```{warning}
+This is a warning directive using backticks.
+
+It can span multiple lines.
+```
+
+```{exercise}
+This is an exercise directive.
+```
+
+````{admonition} Custom Title
+:class: tip
+
+This is a nested directive with four backticks.
+````
+
+```{code-block} python
+def hello():
+    print("Code block directive")
+```
 
 ## Code with Colon Fences
 

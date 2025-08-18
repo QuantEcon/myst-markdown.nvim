@@ -36,6 +36,12 @@ syntax match mystDirectiveStart "^\s*:::\s*\w\+.*$" contained contains=mystDirec
 syntax match mystDirectiveEnd "^\s*:::\s*$" contained
 syntax match mystDirectiveName "\w\+" contained
 
+" MyST backtick directives (```{directive} with content)
+syntax region mystBacktickDirective start="^\s*\z(`\{3,\}\)\s*{\w\+[^}]*}.*$" end="^\s*\z1\s*$" contains=mystBacktickDirectiveStart,mystBacktickDirectiveEnd keepend fold
+syntax match mystBacktickDirectiveStart "^\s*`\{3,\}\s*{\w\+[^}]*}.*$" contained contains=mystBacktickDirectiveName
+syntax match mystBacktickDirectiveEnd "^\s*`\{3,\}\s*$" contained
+syntax match mystBacktickDirectiveName "{\w\+[^}]*}" contained
+
 " MyST inline roles (:role:`content`)
 syntax region mystInlineRole start=":\w\+:`" end="`" oneline contains=mystRoleName,mystRoleContent
 syntax match mystRoleName ":\w\+:" contained
@@ -55,6 +61,9 @@ highlight def link mystColonFenceEnd Delimiter
 highlight def link mystDirectiveStart Function
 highlight def link mystDirectiveEnd Delimiter
 highlight def link mystDirectiveName Type
+highlight def link mystBacktickDirectiveStart Function
+highlight def link mystBacktickDirectiveEnd Delimiter
+highlight def link mystBacktickDirectiveName Type
 highlight def link mystRoleName Type
 highlight def link mystRoleContent String
 highlight def link mystInlineRole String
