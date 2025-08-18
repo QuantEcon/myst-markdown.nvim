@@ -12,6 +12,9 @@ endif
 runtime! syntax/markdown.vim
 unlet! b:current_syntax
 
+" Ensure case sensitivity matches markdown behavior
+syn case ignore
+
 " MyST-specific syntax regions and matches
 
 " MyST comments (% comment)
@@ -52,6 +55,10 @@ syntax region mystCrossRef start="{\w\+}`" end="`" oneline contains=mystCrossRef
 syntax match mystCrossRefType "{\w\+}" contained
 syntax region mystCrossRefContent start="`" end="`" contained
 
+" Math expressions (commonly used in MyST)
+syntax region mystMath start="\$" end="\$" oneline contains=@Spell
+syntax region mystMathBlock start="\$\$" end="\$\$" contains=@Spell
+
 " Define highlighting colors
 highlight def link mystComment Comment
 highlight def link mystTarget PreProc
@@ -70,5 +77,7 @@ highlight def link mystInlineRole String
 highlight def link mystCrossRefType Type
 highlight def link mystCrossRefContent String
 highlight def link mystCrossRef String
+highlight def link mystMath Special
+highlight def link mystMathBlock Special
 
 let b:current_syntax = "myst"
