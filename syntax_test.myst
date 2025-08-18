@@ -1,0 +1,41 @@
+% MyST comment - this should be highlighted as a comment
+% Another comment line
+
+# MyST Markdown Syntax Test
+
+This is regular markdown text.
+
+(my-target)=
+## Target Section
+
+Here's a block break:
+
++++
+
+## Directives Section
+
+:::note
+This is a note directive.
+:::
+
+:::warning
+This is a warning directive.
+
+With multiple paragraphs.
+:::
+
+## Code with Colon Fences
+
+:::python
+def hello_world():
+    print("Hello MyST!")
+    return "success"
+:::
+
+## Inline Syntax
+
+Here's a cross-reference: {ref}`my-target`
+
+And an inline role: :math:`x^2 + y^2 = z^2`
+
+Also: :doc:`some-document` and :code:`print(42)`

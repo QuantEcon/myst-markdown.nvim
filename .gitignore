@@ -1,0 +1,16 @@
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# Test files (excluding the test_myst.md which is for demonstrating syntax)
+test*
+!test_myst.md
+
+# Mac
+.DS_Store
+
+# Vim/Neovim
+tags
+.netrwhist
