@@ -51,13 +51,11 @@ syntax match mystRoleName ":\w\+:" contained
 syntax region mystRoleContent start="`" end="`" contained
 
 " MyST cross-references ({ref}`label` or {directive}`target`)  
-syntax region mystCrossRef start="{\w\+}`" end="`" oneline contains=mystCrossRefType,mystCrossRefContent
-syntax match mystCrossRefType "{\w\+}" contained
-syntax region mystCrossRefContent start="`" end="`" contained
+syntax match mystCrossRef "{\w\+}`[^`]*`" oneline
 
 " Math expressions (commonly used in MyST)
-syntax region mystMath start="\$" end="\$" oneline contains=@Spell
-syntax region mystMathBlock start="\$\$" end="\$\$" contains=@Spell
+syntax region mystMath start="\$" end="\$" oneline keepend
+syntax region mystMathBlock start="\$\$" end="\$\$" keepend
 
 " Define highlighting colors
 highlight def link mystComment Comment
@@ -74,8 +72,6 @@ highlight def link mystBacktickDirectiveName Type
 highlight def link mystRoleName Type
 highlight def link mystRoleContent String
 highlight def link mystInlineRole String
-highlight def link mystCrossRefType Type
-highlight def link mystCrossRefContent String
 highlight def link mystCrossRef String
 highlight def link mystMath Special
 highlight def link mystMathBlock Special
