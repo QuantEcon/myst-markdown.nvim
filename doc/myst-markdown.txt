@@ -1,0 +1,77 @@
+*myst-markdown.nvim*  MyST Markdown syntax highlighting for Neovim
+
+==============================================================================
+CONTENTS                                                     *myst-markdown*
+
+  1. Introduction ........................... |myst-markdown-introduction|
+  2. Installation ........................... |myst-markdown-installation|
+  3. Features ............................... |myst-markdown-features|
+  4. Usage .................................. |myst-markdown-usage|
+  5. Commands ............................... |myst-markdown-commands|
+  6. Filetype Detection ..................... |myst-markdown-filetype|
+
+==============================================================================
+1. INTRODUCTION                                   *myst-markdown-introduction*
+
+myst-markdown.nvim provides syntax highlighting for MyST (Markedly Structured
+Text) markdown files in Neovim. MyST is an extension of CommonMark markdown
+that adds support for technical documentation features like directives, roles,
+and cross-references.
+
+This plugin focuses specifically on syntax highlighting to make authoring MyST
+Markdown more convenient for Neovim users.
+
+==============================================================================
+2. INSTALLATION                                   *myst-markdown-installation*
+
+Using vim-plug: >
+    Plug 'QuantEcon/myst-markdown.nvim'
+
+Using packer.nvim: >
+    use 'QuantEcon/myst-markdown.nvim'
+
+Using lazy.nvim: >
+    { 'QuantEcon/myst-markdown.nvim' }
+
+==============================================================================
+3. FEATURES                                           *myst-markdown-features*
+
+The plugin provides syntax highlighting for the following MyST features:
+
+• Comments (% comment syntax)
+• Block breaks (+++ horizontal rules)  
+• Targets ((name)= reference targets)
+• Colon fences (:::language code blocks)
+• Directives (:::directive...:::)
+• Inline roles (:role:`content`)
+• Cross-references ({ref}`label`)
+
+All standard Markdown syntax is also supported, as MyST extends CommonMark.
+
+==============================================================================
+4. USAGE                                                 *myst-markdown-usage*
+
+The plugin automatically activates for files with the .myst extension.
+
+For .md files containing MyST syntax, you can manually activate MyST 
+highlighting using the provided commands.
+
+==============================================================================
+5. COMMANDS                                           *myst-markdown-commands*
+
+:MystMarkdown                                                  *:MystMarkdown*
+:SetMyst                                                          *:SetMyst*
+    Set the current buffer's filetype to 'myst' to enable MyST syntax
+    highlighting. These commands are equivalent.
+
+==============================================================================
+6. FILETYPE DETECTION                               *myst-markdown-filetype*
+
+The plugin automatically sets the filetype to 'myst' for files with .myst
+extension.
+
+For .md files, use the :MystMarkdown or :SetMyst commands to manually enable
+MyST syntax highlighting when the file contains MyST-specific syntax.
+
+==============================================================================
+vim:tw=78:sw=4:ts=8:ft=help:norl:
