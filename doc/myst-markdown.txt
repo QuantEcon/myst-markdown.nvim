@@ -45,6 +45,7 @@ The plugin provides syntax highlighting for the following MyST features:
 • Directives (:::directive...:::)
 • Inline roles (:role:`content`)
 • Cross-references ({ref}`label`)
+• Math expressions ($inline$ and $$block$$ math)
 
 All standard Markdown syntax is also supported, as MyST extends CommonMark.
 

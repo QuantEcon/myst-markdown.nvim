@@ -15,6 +15,7 @@ This plugin provides syntax highlighting for MyST (Markedly Structured Text) mar
 - 📋 **Directives** - `:::directive...:::`
 - 🔗 **Inline roles** - `:role:`content``
 - 📌 **Cross-references** - `{ref}`label``
+- ➕ **Math expressions** - `$inline$` and `$$block$$` math
 
 All standard Markdown syntax is also supported, as MyST extends CommonMark.
 
@@ -113,6 +114,16 @@ Content above the break.
 +++
 
 Content below the break.
+```
+
+### Math Expressions
+```markdown
+Inline math: $x^2 + y^2 = z^2$
+
+Block math:
+$$
+\int_0^1 x dx = \frac{1}{2}
+$$
 ```
 
 ## Resources

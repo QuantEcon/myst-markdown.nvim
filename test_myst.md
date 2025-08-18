@@ -69,6 +69,14 @@ Here's some text with :ref:`my-target` and :doc:`another-reference`.
 
 Also :math:`x^2 + y^2 = z^2` and :code:`print("hello")`.
 
+### Math Expressions
+
+Inline math: $\alpha + \beta = \gamma$ and display math:
+
+$$
+\int_0^\infty e^{-x} dx = 1
+$$
+
 ### Cross References
 
 See {ref}`my-target` and {doc}`some-document`.
