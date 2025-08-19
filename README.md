@@ -17,7 +17,7 @@ This plugin provides syntax highlighting for MyST (Markedly Structured Text) mar
 - 🔗 **Inline roles** - `:role:`content``
 - 📌 **Cross-references** - `{ref}`label``
 - ➕ **Math expressions** - `$inline$` and `$$block$$` math
-- 🧮 **Math directives** - `{math}...{/math}` and `{math}`content`` with LaTeX highlighting
+- 🧮 **Math directives** - ````{math}` with LaTeX highlighting
 
 All standard Markdown syntax is also supported, as MyST extends CommonMark.
 
@@ -164,12 +164,12 @@ $$
 $$
 
 Math directive (Enhanced):
-{math}
+```{math}
 \begin{aligned}
 \nabla \times \vec{F} &= \left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \hat{i} \\
 &\quad + \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \hat{j}
 \end{aligned}
-{/math}
+```
 
 Inline math role: {math}`\alpha + \beta = \gamma`
 ```

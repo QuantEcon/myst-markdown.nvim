@@ -83,24 +83,6 @@ endfor
 
 unlet! s:lang s:lang_clean s:syntax_file s:done_include
 
-" MyST backtick directives (```{directive} with content) - for non-code-cell directives
-syntax region mystBacktickDirective start="^\s*\z(`\{3,\}\)\s*{\%(code-cell\)\@!\w\+[^}]*}.*$" end="^\s*\z1\s*$" contains=mystBacktickDirectiveStart,mystBacktickDirectiveEnd keepend fold
-syntax match mystBacktickDirectiveStart "^\s*`\{3,\}\s*{\w\+[^}]*}.*$" contained contains=mystBacktickDirectiveName
-syntax match mystBacktickDirectiveEnd "^\s*`\{3,\}\s*$" contained
-syntax match mystBacktickDirectiveName "{\w\+[^}]*}" contained
-
-" MyST inline roles (:role:`content`)
-syntax region mystInlineRole start=":\w\+:`" end="`" oneline contains=mystRoleName,mystRoleContent
-syntax match mystRoleName ":\w\+:" contained
-syntax region mystRoleContent start="`" end="`" contained
-
-" MyST cross-references ({ref}`label` or {directive}`target`)  
-syntax match mystCrossRef "{\w\+}`[^`]*`" oneline
-
-" Math expressions (commonly used in MyST)
-syntax region mystMath start="\$" end="\$" oneline keepend
-syntax region mystMathBlock start="\$\$" end="\$\$" keepend
-
 " MyST math directives and roles with LaTeX highlighting
 " Include LaTeX syntax for math content
 try
@@ -117,14 +99,32 @@ catch
   endtry
 endtry
 
-" Math directive block {math}...{/math}
-syntax region mystMathDirective start="^{math}$" end="^{/math}$" keepend contains=@mystMathTeX,mystMathDirectiveStart,mystMathDirectiveEnd
-syntax match mystMathDirectiveStart "^{math}$" contained
-syntax match mystMathDirectiveEnd "^{/math}$" contained
+" Math directive block ```{math} content ```
+syntax region mystMathDirective start="^\s*\z(`\{3,\}\)\s*{math}\s*$" end="^\s*\z1\s*$" keepend contains=@mystMathTeX,mystMathDirectiveStart,mystMathDirectiveEnd
+syntax match mystMathDirectiveStart "^\s*`\{3,\}\s*{math}\s*$" contained
+syntax match mystMathDirectiveEnd "^\s*`\{3,\}\s*$" contained
 
 " Math inline role {math}`content`
 syntax region mystMathRole start="{math}`" end="`" oneline contains=@mystMathTeX,mystMathRoleDelim
 syntax match mystMathRoleDelim "{math}`\|`" contained
+
+" MyST backtick directives (```{directive} with content) - for non-code-cell and non-math directives
+syntax region mystBacktickDirective start="^\s*\z(`\{3,\}\)\s*{\%(code-cell\|math\)\@!\w\+[^}]*}.*$" end="^\s*\z1\s*$" contains=mystBacktickDirectiveStart,mystBacktickDirectiveEnd keepend fold
+syntax match mystBacktickDirectiveStart "^\s*`\{3,\}\s*{\w\+[^}]*}.*$" contained contains=mystBacktickDirectiveName
+syntax match mystBacktickDirectiveEnd "^\s*`\{3,\}\s*$" contained
+syntax match mystBacktickDirectiveName "{\w\+[^}]*}" contained
+
+" MyST inline roles (:role:`content`)
+syntax region mystInlineRole start=":\w\+:`" end="`" oneline contains=mystRoleName,mystRoleContent
+syntax match mystRoleName ":\w\+:" contained
+syntax region mystRoleContent start="`" end="`" contained
+
+" MyST cross-references ({ref}`label` or {directive}`target`)  
+syntax match mystCrossRef "{\w\+}`[^`]*`" oneline
+
+" Math expressions (commonly used in MyST)
+syntax region mystMath start="\$" end="\$" oneline keepend
+syntax region mystMathBlock start="\$\$" end="\$\$" keepend
 
 " Define highlighting colors
 highlight def link mystComment Comment

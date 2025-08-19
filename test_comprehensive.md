@@ -59,18 +59,18 @@ end
 The Pythagorean theorem: {math}`a^2 + b^2 = c^2`
 
 ### Block Math Directive
-{math}
+```{math}
 \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-{/math}
+```
 
 ### Complex Math
-{math}
+```{math}
 \begin{aligned}
 \nabla \times \vec{F} &= \left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \hat{i} \\
 &\quad + \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \hat{j} \\
 &\quad + \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \hat{k}
 \end{aligned}
-{/math}
+```
 
 ## Existing Features (Should Still Work)
 

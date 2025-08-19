@@ -32,20 +32,20 @@ function helloWorld() {
 
 ## Math directives that need LaTeX highlighting
 
-{math}
+```{math}
 \int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
-{/math}
+```
 
 Inline math role: {math}`\alpha + \beta = \gamma`
 
 More complex block math:
-{math}
+```{math}
 \begin{aligned}
 \frac{\partial u}{\partial t} &= \nabla^2 u \\
 u(x,0) &= f(x) \\
 \frac{\partial u}{\partial n}\bigg|_{\partial \Omega} &= 0
 \end{aligned}
-{/math}
+```
 
 ## Existing math (should continue to work)
 
