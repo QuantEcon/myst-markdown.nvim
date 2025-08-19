@@ -13,11 +13,11 @@ This plugin provides syntax highlighting for MyST (Markedly Structured Text) mar
 - 🎯 **Targets** - `(name)=` reference targets
 - 📦 **Colon fences** - `:::language` code blocks
 - 📋 **Directives** - `:::directive...:::`
-- 💻 **Code-cell directives** - ````{code-cell} language` with syntax highlighting
+- 💻 **Code-cell directives** - ```{code-cell} language` with syntax highlighting
 - 🔗 **Inline roles** - `:role:`content``
 - 📌 **Cross-references** - `{ref}`label``
 - ➕ **Math expressions** - `$inline$` and `$$block$$` math
-- 🧮 **Math directives** - ````{math}` with LaTeX highlighting
+- 🧮 **Math directives** - ```{math}` with LaTeX highlighting
 
 All standard Markdown syntax is also supported, as MyST extends CommonMark.
 
