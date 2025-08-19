@@ -143,7 +143,7 @@ console.log(`fibonacci(10) = ${fibonacci(10)}`);
 ```
 ```
 
-Supported languages: python, python3, py, julia, jl, javascript, js, r, bash, sh, sql, ruby, go, rust, cpp, c, java
+Supported languages: python, python3, py, ipython, ipython3, julia, jl, javascript, js, r, bash, sh, sql, ruby, go, rust, cpp, c, java
 
 ### Block Breaks
 ```markdown

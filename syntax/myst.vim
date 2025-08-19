@@ -42,7 +42,7 @@ syntax match mystDirectiveName "\w\+" contained
 " MyST code-cell directives with language-specific highlighting
 " Define supported languages for code-cell directives
 if !exists('g:myst_code_cell_languages')
-  let g:myst_code_cell_languages = ['python', 'python3', 'py', 'julia', 'jl', 'javascript', 'js', 'r', 'bash', 'sh', 'sql', 'ruby', 'go', 'rust', 'cpp', 'c', 'java']
+  let g:myst_code_cell_languages = ['python', 'python3', 'py', 'ipython', 'ipython3', 'julia', 'jl', 'javascript', 'js', 'r', 'bash', 'sh', 'sql', 'ruby', 'go', 'rust', 'cpp', 'c', 'java']
 endif
 
 " Include syntax files for supported languages
@@ -54,7 +54,7 @@ for s:lang in g:myst_code_cell_languages
   endif
   " Map some common aliases to their actual syntax files
   let s:syntax_file = s:lang
-  if s:lang =~ '^\(python3\|py\)$'
+  if s:lang =~ '^\(python3\|py\|ipython\|ipython3\)$'
     let s:syntax_file = 'python'
   elseif s:lang =~ '^\(jl\)$'
     let s:syntax_file = 'julia'
