@@ -13,9 +13,11 @@ This plugin provides syntax highlighting for MyST (Markedly Structured Text) mar
 - 🎯 **Targets** - `(name)=` reference targets
 - 📦 **Colon fences** - `:::language` code blocks
 - 📋 **Directives** - `:::directive...:::`
+- 💻 **Code-cell directives** - ```{code-cell} language` with syntax highlighting
 - 🔗 **Inline roles** - `:role:`content``
 - 📌 **Cross-references** - `{ref}`label``
 - ➕ **Math expressions** - `$inline$` and `$$block$$` math
+- 🧮 **Math directives** - ```{math}` with LaTeX highlighting
 
 All standard Markdown syntax is also supported, as MyST extends CommonMark.
 
@@ -107,6 +109,42 @@ def hello():
 :::
 ```
 
+### Code-cell Directives (Enhanced)
+Code-cell directives now support language-specific syntax highlighting:
+
+```markdown
+```{code-cell} python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+print(f"fibonacci(10) = {fibonacci(10)}")
+```
+
+```{code-cell} julia
+function fibonacci(n::Int)
+    if n <= 1
+        return n
+    end
+    return fibonacci(n-1) + fibonacci(n-2)
+end
+
+println("fibonacci(10) = $(fibonacci(10))")
+```
+
+```{code-cell} javascript
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+
+console.log(`fibonacci(10) = ${fibonacci(10)}`);
+```
+```
+
+Supported languages: python, python3, py, ipython, ipython3, julia, jl, javascript, js, r, bash, sh, sql, ruby, go, rust, cpp, c, java
+
 ### Block Breaks
 ```markdown
 Content above the break.
@@ -124,6 +162,16 @@ Block math:
 $$
 \int_0^1 x dx = \frac{1}{2}
 $$
+
+Math directive (Enhanced):
+```{math}
+\begin{aligned}
+\nabla \times \vec{F} &= \left( \frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z} \right) \hat{i} \\
+&\quad + \left( \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x} \right) \hat{j}
+\end{aligned}
+```
+
+Inline math role: {math}`\alpha + \beta = \gamma`
 ```
 
 ## Resources
